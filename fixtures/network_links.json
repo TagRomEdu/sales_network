@@ -1,6 +1,6 @@
 [
   {
-    "model": "network.networklink",
+    "model": "network_app.networklink",
     "pk": 1,
     "fields": {
       "network": "plant",
@@ -21,7 +21,7 @@
     }
   },
   {
-    "model": "network.networklink",
+    "model": "network_app.networklink",
     "pk": 2,
     "fields": {
       "network": "plant",
@@ -41,7 +41,7 @@
     }
   },
   {
-    "model": "network.networklink",
+    "model": "network_app.networklink",
     "pk": 3,
     "fields": {
       "network": "retail_network",
@@ -57,14 +57,14 @@
         8,
         9
       ],
-      "purveyor": 1,
+      "distributor": 1,
       "debt": 157033.67,
       "hierarchy": 1,
       "created_at": "2024-02-13T15:58:44.767594-06:00"
     }
   },
   {
-    "model": "network.networklink",
+    "model": "network_app.networklink",
     "pk": 4,
     "fields": {
       "network": "retail_network",
@@ -78,14 +78,14 @@
         8,
         9
       ],
-      "purveyor": 3,
+      "distributor": 3,
       "debt": 1033.83,
       "hierarchy": 2,
       "created_at": "2024-02-13T15:58:44.767594-06:00"
     }
   },
   {
-    "model": "network.networklink",
+    "model": "network_app.networklink",
     "pk": 5,
     "fields": {
       "network": "individual_entrepreneur",
@@ -100,14 +100,14 @@
         6,
         7
       ],
-      "purveyor": 2,
+      "distributor": 2,
       "debt": 0.17,
       "hierarchy": 1,
       "created_at": "2024-02-13T15:58:44.767594-06:00"
     }
   },
   {
-    "model": "network.networklink",
+    "model": "network_app.networklink",
     "pk": 6,
     "fields": {
       "network": "individual_entrepreneur",
@@ -121,7 +121,7 @@
         2,
         3
       ],
-      "purveyor": 3,
+      "distributor": 3,
       "debt": 89567.03,
       "hierarchy": 2,
       "created_at": "2024-02-13T15:58:44.767594-06:00"
