@@ -45,7 +45,7 @@ class NetworkLink(models.Model):
         (RETAIL_NETWORK, 'Retail network'),
         (INDIVIDUAL_ENTREPRENEUR, 'Individual entrepreneur')
     ]
-    
+
     network = models.CharField(
         max_length=23,
         choices=LEVEL_CHOICES,
@@ -130,10 +130,10 @@ class NetworkLink(models.Model):
                 raise ValidationError(_('Debt must be greater than 0.'))
 
         # Setting the Hierarchy Level
-        if self.network == NetworkChoices.PLANT and not self.distributor:
+        if self.network == self.PLANT and not self.distributor:
             self.hierarchy = 0
 
-        elif self.network != NetworkChoices.PLANT and not self.distributor:
+        elif self.network != self.PLANT and not self.distributor:
             raise ValidationError(
                 _('The distributor must have this link in the network.')
                 )
