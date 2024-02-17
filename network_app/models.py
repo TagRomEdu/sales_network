@@ -3,17 +3,6 @@ from django.utils.translation import gettext_lazy as _
 from rest_framework.exceptions import ValidationError
 
 
-class NetworkChoices(models.TextChoices):
-    PLANT = 'plant',
-    _('Plant')
-
-    RETAIL_NETWORK = 'retail_network',
-    _('Retail network')
-
-    INDIVIDUAL_ENTREPRENEUR = 'individual_entrepreneur',
-    _('Individual entrepreneur')
-
-
 class Product(models.Model):
     """
     Product's model for network.
@@ -47,9 +36,19 @@ class NetworkLink(models.Model):
     """
     Model for network links.
     """
+
+    PLANT = 'plant'
+    RETAIL_NETWORK = 'retail_network'
+    INDIVIDUAL_ENTREPRENEUR = 'individual_entrepreneur'
+    LEVEL_CHOICES = [
+        (PLANT, 'Plant'),
+        (RETAIL_NETWORK, 'Retail network'),
+        (INDIVIDUAL_ENTREPRENEUR, 'Individual entrepreneur')
+    ]
+    
     network = models.CharField(
         max_length=23,
-        choices=NetworkChoices,
+        choices=LEVEL_CHOICES,
         verbose_name=_('Network')
     )
     name = models.CharField(
@@ -98,8 +97,9 @@ class NetworkLink(models.Model):
         decimal_places=2,
         default=0.00,
         verbose_name=_('Debt'),
-        help_text=_('You indicate the debt to the supplier in monetary terms ',
-                    'from the moment to the penny.'),
+        help_text=_(
+            '''You indicate the debt to the supplier in monetary terms
+            from the moment to the penny.'''),
     )
     created_at = models.DateTimeField(
         auto_now_add=True,
