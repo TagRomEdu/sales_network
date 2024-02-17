@@ -25,7 +25,7 @@ class NetworkLinkAdmin(admin.ModelAdmin):
 
     def distributor_link(self, obj):
         if obj.distributor:
-            url = reverse("admin:network_networklink_change",
+            url = reverse("admin:network_app_networklink_change",
                           args=[obj.distributor.pk])
             link = '<a href="%s">%s</a>' % (url, obj.distributor)
             return mark_safe(link)
